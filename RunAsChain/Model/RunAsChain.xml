@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Transformation>
+  <Map Sequence="1">
+    <MapFilePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\New Text Document.txt"/>
+    <SourceFilePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\New Text Document1.txt"/>
+    <TargetFilePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\New Text Document2.txt"/>
+    <CodeModules>
+      <CodeModulePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\New Text Document3.txt"/>
+      <CodeModulePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\New Text Document4.txt"/>
+    </CodeModules>
+    <TransformationVariables>
+      <Variable Value="A" IsPublic="No" InitialValue="1"/>
+      <Variable Value="B" IsPublic="No" InitialValue="1"/>
+      <Variable Value="C" IsPublic="No" InitialValue="1"/>
+    </TransformationVariables>
+  </Map>
+  <Map Sequence="2">
+    <MapFilePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\2New Text Document.txt"/>
+    <SourceFilePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\2New Text Document1.txt"/>
+    <TargetFilePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\2New Text Document2.txt"/>
+    <CodeModules>
+      <CodeModulePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\2New Text Document3.txt"/>
+      <CodeModulePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\2New Text Document4.txt"/>
+    </CodeModules>
+    <TransformationVariables>
+      <Variable Value="A" IsPublic="Yes" InitialValue="0"/>
+      <Variable Value="B" IsPublic="Yes" InitialValue="0"/>
+      <Variable Value="C" IsPublic="Yes" InitialValue="0"/>
+    </TransformationVariables>
+  </Map>
+</Transformation>

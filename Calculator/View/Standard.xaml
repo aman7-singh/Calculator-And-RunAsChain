@@ -1,0 +1,90 @@
+﻿<UserControl x:Class="Calculator.View.Standard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Calculator.View"
+			 xmlns:MainViewModel="clr-namespace:Calculator.ViewModel.MainViewModel.Standard"
+             mc:Ignorable="d" 
+			 x:Name="StandardXaml"
+             d:DesignHeight="450" d:DesignWidth="800">
+	<UserControl.Resources>
+		<MainViewModel:StandardViewModel x:Key="StandardViewModel"/>
+	</UserControl.Resources>
+	<Grid DataContext="{StaticResource StandardViewModel}">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="40"/>
+			<RowDefinition/>
+			<RowDefinition  Height="2"/>
+			<RowDefinition/>
+			<RowDefinition Height="2"/>
+			<RowDefinition Height="5*"/>
+		</Grid.RowDefinitions>
+		<Label Grid.Row="0" Content="Standard"  Background="LightCyan" FontWeight="SemiBold" FontSize="25"/>
+		<StackPanel Grid.Row="1" ScrollViewer.CanContentScroll="True">
+			<TextBlock  Grid.Row="1" Name="Expression" Text="{Binding  Expression, Mode=TwoWay}" TextWrapping="Wrap" TextAlignment="Right" 
+					 FontSize="20" FontWeight="SemiBold" />
+		</StackPanel>
+		<GridSplitter Grid.Row="2" Background="LightPink"  HorizontalAlignment="Stretch"/>
+		<Grid Grid.Row="3">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="45"/>
+				<RowDefinition Height="2"/>
+				<RowDefinition Height="auto"/>
+			</Grid.RowDefinitions>
+			<Grid Grid.Row="0">
+				<TextBlock Grid.Row="0" Name="CalculatedVal" Background="LightGray" FontSize="40" FontWeight="Bold" Margin="0,0,0,0"
+					   VerticalAlignment="Bottom"  Text="{Binding CalcultedValue, Mode=TwoWay}"/>
+			</Grid>
+			<!--<GridSplitter Grid.Row="1" Background="LightPink" Foreground="Green" HorizontalAlignment="Stretch"/>-->
+			<Grid Grid.Row="2">
+				<StackPanel ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True">
+					<TextBlock Height="auto" ScrollViewer.CanContentScroll="True" Grid.Row="2" Name="Operation" Text="{Binding Operation}" Foreground="DarkBlue" 
+					   VerticalAlignment="Top" TextBlock.FontStyle="Italic"/>
+				</StackPanel>
+			</Grid>
+		</Grid>
+		<GridSplitter Grid.Row="4" Background="LightPink" Foreground="Green" HorizontalAlignment="Stretch"/>
+		<Grid Grid.Row="5">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="0"/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<Button Grid.Column="0" Grid.Row="1" Padding="0" Content="Remainder" Command="{Binding RemainderCommand}"/>
+			<Button Grid.Column="1" Grid.Row="1" Padding="0" Content="sqrt" Command="{Binding SqrtCommand}"/>
+			<Button Grid.Column="2" Grid.Row="1" Padding="0" Content="x^n" Command="{Binding PowerCommand}"/>
+			<Button Grid.Column="3" Grid.Row="1" Padding="0" Content="Percentage" Command="{Binding PercentCommand}"/>
+			<Button Grid.Column="0" Grid.Row="2" Padding="2" Content="CE" Command="{Binding CheckCommand}"/>
+			<Button Grid.Column="1" Grid.Row="2" Padding="2" Content="C" Command="{Binding ClearAllCommand}"/>
+			<Button Grid.Column="2" Grid.Row="2" Padding="2" Content="&lt;--" Click="Button_Click_delete"/>
+			<Button Grid.Column="3" Grid.Row="2" Padding="2" Content="/" Command="{Binding DividCommand}"/>
+			<Button Grid.Column="0" Grid.Row="3" Padding="2" Content="7" Click="Button_Click_7"/>
+			<Button Grid.Column="1" Grid.Row="3" Padding="2" Content="8" Click="Button_Click_8"/>
+			<Button Grid.Column="2" Grid.Row="3" Padding="2" Content="9" Click="Button_Click_9"/>
+			<Button Grid.Column="3" Grid.Row="3" Padding="2" Content="*" Command="{Binding MultiplyCommand}"/>
+			<Button Grid.Column="0" Grid.Row="4" Padding="2" Content="4" Click="Button_Click_4"/>
+			<Button Grid.Column="1" Grid.Row="4" Padding="2" Content="5" Click="Button_Click_5"/>
+			<Button Grid.Column="2" Grid.Row="4" Padding="2" Content="6" Click="Button_Click_6"/>
+			<Button Grid.Column="3" Grid.Row="4" Padding="2" Content="-" Command="{Binding SubtractCommand}"/>
+			<Button Grid.Column="0" Grid.Row="5" Padding="2" Content="1" Click="Button_Click_1"/>
+			<Button Grid.Column="1" Grid.Row="5" Padding="2" Content="2" Click="Button_Click_2"/>
+			<Button Grid.Column="2" Grid.Row="5" Padding="2" Content="3" Click="Button_Click_3"/>
+			<Button Grid.Column="3" Grid.Row="5" Padding="2" Content="+" Command="{Binding AddCommand}"/>
+			<Button Grid.Column="0" Grid.Row="6" Padding="2" Content="+-" Click="Button_Click_Sign"/>
+			<Button Grid.Column="1" Grid.Row="6" Padding="2" Content="0" Click="Button_Click_0"/>
+			<Button Grid.Column="2" Grid.Row="6" Padding="2" Content="." Click="Button_Click_Dot"/>
+			<Button Grid.Column="3" Grid.Row="6" Padding="2" Content="=" Command="{Binding EqualCommand}"/>
+		</Grid>
+	</Grid>
+</UserControl>
