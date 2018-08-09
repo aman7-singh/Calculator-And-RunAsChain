@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Transformations
 {
-    class TransformationViewModel
+    public class TransformationViewModel
     {
+
     }
 }

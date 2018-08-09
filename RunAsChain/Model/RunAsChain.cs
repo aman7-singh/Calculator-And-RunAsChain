@@ -7,13 +7,17 @@ using System.Threading.Tasks;
 
 namespace RunAsChain.Model
 {
-    public class RunAsChain 
+    public class RunAsChain : IRunAsChain
     {
         public List<IMap> Chain { get ; set ; }
 
         public RunAsChain(List<IMap> chain)
         {
             Chain = chain;
+        }
+        public RunAsChain()
+        {
+
         }
     }
 }

@@ -12,7 +12,7 @@ using System.Xml.Linq;
 
 namespace RunAsChain.Model
 {
-    class XmlToObjectBuilder: IRunAsChain
+    class XmlToObjectBuilder
     {
 
         public RunAsChain RunAsChain { get; set; }
@@ -30,7 +30,7 @@ namespace RunAsChain.Model
         }
 
 
-        public void ModelObj()
+        public IRunAsChain ModelObj()
         {
             var xml = XDocument.Load(RunAsChainFile);
             var RunAsChainXml = xml?.Descendants("Map")
@@ -81,6 +81,7 @@ namespace RunAsChain.Model
             }
 
             RunAsChain s = new RunAsChain(ml);
+            return s;
         }
     }
 }

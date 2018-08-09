@@ -25,8 +25,7 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Menu
 
         public void OpenChain(object obj)
         {
-            XmlToObjectBuilder x = new XmlToObjectBuilder();
-            x.ModelObj();
+            
 
             //throw new NotImplementedException();
         }
