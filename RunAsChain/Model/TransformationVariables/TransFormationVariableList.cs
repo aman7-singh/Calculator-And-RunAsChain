@@ -11,6 +11,11 @@ namespace RunAsChain.Model.TransformationVariables
     {
         private List<ITransformationVariable> _tVariableList;
 
+        public TransFormationVariableList(List<ITransformationVariable> transobj)
+        {
+            this._tVariableList = transobj;
+        }
+
         public List<ITransformationVariable> TVariableList
         {
             get { return _tVariableList; }

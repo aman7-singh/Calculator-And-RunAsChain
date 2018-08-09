@@ -11,6 +11,11 @@ namespace RunAsChain.Model.CodeModule
     {
         private List<ICodeModule> _basFilePathList;
 
+        public CodeModules(List<ICodeModule> basobj)
+        {
+            this._basFilePathList = basobj;
+        }
+
         public List<ICodeModule> BasFilePathList
         {
             get { return _basFilePathList; }

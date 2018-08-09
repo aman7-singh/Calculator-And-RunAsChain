@@ -16,6 +16,9 @@ namespace RunAsChain.Model.SourceFile
             get { return _sourceFilePath; }
             set { _sourceFilePath = value; }
         }
-
+        public SourceFilePath(string s)
+        {
+            _sourceFilePath = s;
+        }
     }
 }

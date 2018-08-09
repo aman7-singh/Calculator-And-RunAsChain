@@ -16,6 +16,9 @@ namespace RunAsChain.Model.TargetFile
             get { return _racTargetFilePath; }
             set { _racTargetFilePath = value; }
         }
-
+        public TargetFilePath(string t)
+        {
+            _racTargetFilePath = t;
+        }
     }
 }

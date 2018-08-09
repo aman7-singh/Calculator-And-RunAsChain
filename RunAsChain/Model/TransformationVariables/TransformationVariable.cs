@@ -33,6 +33,11 @@ namespace RunAsChain.Model.TransformationVariables
             set { _initialValue = value; }
         }
 
-
+        public TransformationVariable(string tv, bool ip, string iv)
+        {
+            _tVariable = tv;
+            _isPublic = ip;
+            _initialValue = iv;
+        }
     }
 }

@@ -16,6 +16,9 @@ namespace RunAsChain.Model.CodeModule
             get { return _basFilePayh; }
             set { _basFilePayh = value; }
         }
-
+        public CodeModule(string c)
+        {
+            _basFilePayh = c;
+        }
     }
 }
