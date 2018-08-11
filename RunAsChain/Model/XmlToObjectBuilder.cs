@@ -4,6 +4,7 @@ using RunAsChain.Model.TargetFile;
 using RunAsChain.Model.TransformationVariables;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace RunAsChain.Model
         //}
 
 
-        public List<IMap> ModelObj( string RunAsChainFile)
+        public ObservableCollection<IMap> ModelObj( string RunAsChainFile)
         {
             var xml = XDocument.Load(RunAsChainFile);
             var RunAsChainXml = xml?.Descendants("Map")
@@ -56,13 +57,13 @@ namespace RunAsChain.Model
 
             
             var Trans =  RunAsChainXml.ToList();
-            var ml = new List<IMap>();
+            var ml = new ObservableCollection<IMap>();
             foreach(var item in RunAsChainXml)
             {
                 var mp = new Map_Path.Mappath(item.MapFilePath);
                 var sp =  new SourceFilePath(item.SourceFilePath);
                 var tp =  new TargetFilePath(item.TargetFilePath);
-                var basobj = new List<ICodeModule>();
+                var basobj = new ObservableCollection<ICodeModule>();
 
                 foreach (var bas in item.BasFiles)
                 {
@@ -70,7 +71,7 @@ namespace RunAsChain.Model
                 }
                 var bl = new CodeModule.CodeModules(basobj);
 
-                var Transobj = new List<ITransformationVariable>();
+                var Transobj = new ObservableCollection<ITransformationVariable>();
                 foreach (var tran in item.TransformationVariable)
                 {
                     Transobj.Add(new TransformationVariable("", false, ""));

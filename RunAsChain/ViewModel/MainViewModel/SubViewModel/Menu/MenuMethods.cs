@@ -7,6 +7,7 @@ using RunAsChain.ViewModel.MainViewModel.SubViewModel.Tab;
 using RunAsChain.ViewModel.MainViewModel.SubViewModel.Transformations;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,7 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Menu
         {
             string path = @"C:\Users\1994a\source\repos\Calculator\RunAsChain\Model\RunAsChain.xml";
             XmlToObjectBuilder x = new XmlToObjectBuilder();
-            List<IMap> MapList = x.ModelObj(path);
+            ObservableCollection<IMap> MapList = x.ModelObj(path);
             TransformationViewModel tran = new TransformationViewModel(path);
             MapViewModel AllMap = new MapViewModel(MapList);
             //throw new NotImplementedException();
