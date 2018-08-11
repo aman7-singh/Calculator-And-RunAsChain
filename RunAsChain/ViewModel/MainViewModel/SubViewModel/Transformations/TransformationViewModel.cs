@@ -1,4 +1,5 @@
 ﻿using RunAsChain.Model.Interface;
+using RunAsChain.ViewModel.MainViewModel.SubViewModel.Menu;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,15 +8,25 @@ using System.Threading.Tasks;
 
 namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Transformations
 {
-    public class TransformationViewModel
+    public class TransformationViewModel:Notify
     {
-        List<string> p = new List<string>();
-        public List<string> tran { get; set; }
-        public TransformationViewModel(string path)
+        private List<string> TempList = new List<string>() ;
+        private List<string> _chainList;
+
+        public List<string> ChainList
         {
-            
-            p.Add(path);
-            tran = p;
+            get { return _chainList; }
+            set
+            {
+                _chainList = value;
+                RaisePropertyChanged(this, "ChainList");
+            }
+        }
+        string path = @"C:\Users\1994a\source\repos\Calculator\RunAsChain\Model\RunAsChain12.xml";
+        public TransformationViewModel()
+        {
+            TempList.Add(path);
+            ChainList = TempList;
         }
     }
 }

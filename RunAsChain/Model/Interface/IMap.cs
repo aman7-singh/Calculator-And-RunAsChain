@@ -8,9 +8,9 @@ namespace RunAsChain.Model.Interface
 {
     public interface IMap
     {
-        ISourceFilePath SrcPath {get;set;}
-        IMapFilePath MapPath {get;set;}
-        ITargetFilePath TrgtPath {get;set;}
+        string SrcPath {get;set;}
+        string MapPath {get;set;}
+        string TrgtPath {get;set;}
         ICodeModules BasPaths {get;set; }
         ITransFormationVariableList VarList {get;set; }
     }

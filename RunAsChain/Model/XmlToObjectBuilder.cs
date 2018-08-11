@@ -1,36 +1,14 @@
-﻿using RunAsChain.Model.Interface;
-using RunAsChain.Model.SourceFile;
-using RunAsChain.Model.TargetFile;
+﻿using RunAsChain.Model.CodeModule;
+using RunAsChain.Model.Interface;
 using RunAsChain.Model.TransformationVariables;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
 using System.Xml.Linq;
 
 namespace RunAsChain.Model
 {
     class XmlToObjectBuilder
     {
-
-        public RunAsChain RunAsChain { get; set; }
-        private string _runAsChainFile = @"C:\Users\1994a\source\repos\Calculator\RunAsChain\Model\RunAsChain.xml";
-
-        public string RunAsChainFile
-        {
-            get { return _runAsChainFile; }
-            set { _runAsChainFile = value; }
-        }
-
-        //public XmlToObjectBuilder()
-        //{
-        //    ModelObj();
-        //}
-
-
         public ObservableCollection<IMap> ModelObj( string RunAsChainFile)
         {
             var xml = XDocument.Load(RunAsChainFile);
@@ -60,16 +38,16 @@ namespace RunAsChain.Model
             var ml = new ObservableCollection<IMap>();
             foreach(var item in RunAsChainXml)
             {
-                var mp = new Map_Path.Mappath(item.MapFilePath);
-                var sp =  new SourceFilePath(item.SourceFilePath);
-                var tp =  new TargetFilePath(item.TargetFilePath);
-                var basobj = new ObservableCollection<ICodeModule>();
+                string mp = item.MapFilePath;
+                string sp =  item.SourceFilePath;
+                string tp = item.TargetFilePath;
+                var basobj = new ObservableCollection<string>();
 
                 foreach (var bas in item.BasFiles)
                 {
-                    basobj.Add(new CodeModule.CodeModule(bas.BasPath));
+                    basobj.Add(bas.BasPath);
                 }
-                var bl = new CodeModule.CodeModules(basobj);
+                var bl = new CodeModules(basobj);
 
                 var Transobj = new ObservableCollection<ITransformationVariable>();
                 foreach (var tran in item.TransformationVariable)

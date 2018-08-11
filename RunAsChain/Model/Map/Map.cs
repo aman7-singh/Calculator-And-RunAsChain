@@ -9,13 +9,13 @@ namespace RunAsChain.Model.Map
 {
     public class Map : IMap
     {
-        public ISourceFilePath SrcPath { get ; set; }
-        public IMapFilePath MapPath { get ; set; }
-        public ITargetFilePath TrgtPath { get; set ; }
+        public string SrcPath { get ; set; }
+        public string MapPath { get ; set; }
+        public string TrgtPath { get; set ; }
         public ICodeModules BasPaths { get; set; }
         public ITransFormationVariableList VarList { get; set; }
         
-       public Map(IMapFilePath mp, ISourceFilePath sf, ITargetFilePath tp, ICodeModules bl, ITransFormationVariableList tl)
+       public Map(string mp, string sf, string tp, ICodeModules bl, ITransFormationVariableList tl)
         {
             MapPath = mp;
             SrcPath = sf;

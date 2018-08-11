@@ -15,12 +15,42 @@ using System.Windows;
 
 namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Menu
 {
-    public class MenuMethods: IMenuMethod
+    public class MenuMethods: Notify, IMenuMethod
     {
         MenuArgs args = new MenuArgs();
+        private ObservableCollection<string> _chainList =new ObservableCollection<string>();
+        public ObservableCollection<string> ChainList
+        {
+            get { return _chainList; }
+            set
+            {
+                _chainList = value;
+                RaisePropertyChanged(this, "ChainList");
+            }
+        }
+        private ObservableCollection<IMap> _MapList = new ObservableCollection<IMap>();
+        public ObservableCollection<IMap> MapList
+        {
+            get { return _MapList; }
+            set
+            {
+                _MapList = value;
+                RaisePropertyChanged(this,"MapList");
+            }
+        }
+        private ObservableCollection<ICodeModules> _basList = new ObservableCollection<ICodeModules>();
+        public ObservableCollection<ICodeModules> BasList
+        {
+            get { return _basList; }
+            set
+            {
+                _basList = value;
+                RaisePropertyChanged(this, "BasList");
+            }
+        }
         public MenuMethods()
         {
-            MethodChanged += OnMethodChanged;
+
         }
         public void CreateNewChain(object obj)
         {            
@@ -30,12 +60,6 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Menu
 
         public void OpenChain(object obj)
         {
-            string path = @"C:\Users\1994a\source\repos\Calculator\RunAsChain\Model\RunAsChain.xml";
-            XmlToObjectBuilder x = new XmlToObjectBuilder();
-            ObservableCollection<IMap> MapList = x.ModelObj(path);
-            TransformationViewModel tran = new TransformationViewModel(path);
-            MapViewModel AllMap = new MapViewModel(MapList);
-            //throw new NotImplementedException();
         }
 
         public void RunAllChain(object obj)

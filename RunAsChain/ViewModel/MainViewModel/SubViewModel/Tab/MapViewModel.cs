@@ -10,7 +10,14 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Tab
 {
     public class MapViewModel
     {
-        public ObservableCollection<IMap> AllMaps { get; set; }
+        private ObservableCollection<IMap> _allMaps;
+
+        public ObservableCollection<IMap> AllMaps
+        {
+            get { return _allMaps; }
+            set { _allMaps = value; }
+        }
+
         public MapViewModel(ObservableCollection<IMap> maps)
         {
             AllMaps = maps;

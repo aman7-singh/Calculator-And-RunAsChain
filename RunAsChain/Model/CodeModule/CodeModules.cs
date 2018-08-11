@@ -8,20 +8,12 @@ using System.Threading.Tasks;
 
 namespace RunAsChain.Model.CodeModule
 {
-    public class CodeModules:ICodeModules
+    public class CodeModules : ICodeModules
     {
-        private ObservableCollection<ICodeModule> _basFilePathList;
-
-        public CodeModules(ObservableCollection<ICodeModule> basobj)
+        public ObservableCollection<string> BasFilePathList { get; set; }
+        public CodeModules(ObservableCollection<string> _basFilePath)
         {
-            this._basFilePathList = basobj;
+            this.BasFilePathList = _basFilePath;
         }
-
-        public ObservableCollection<ICodeModule> BasFilePathList
-        {
-            get { return _basFilePathList; }
-            set { _basFilePathList = value; }
-        }
-
     }
 }

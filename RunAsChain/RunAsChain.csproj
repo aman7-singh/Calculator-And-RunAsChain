@@ -54,34 +54,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\CodeModule\CodeModule.cs" />
     <Compile Include="Model\CodeModule\CodeModules.cs" />
-    <Compile Include="Model\Interface\ICodeModule.cs" />
     <Compile Include="Model\Interface\ICodeModules.cs" />
     <Compile Include="Model\Interface\IMap.cs" />
-    <Compile Include="Model\Interface\IMapFilePath.cs" />
     <Compile Include="Model\Interface\IMapList.cs" />
     <Compile Include="Model\Interface\IRunAsChain.cs" />
-    <Compile Include="Model\Interface\ISourceFilePath.cs" />
-    <Compile Include="Model\Interface\ITargetFilePath.cs" />
     <Compile Include="Model\Interface\ITransformationVariable.cs" />
     <Compile Include="Model\Interface\ITransFormationVariableList.cs" />
     <Compile Include="Model\Map\Map.cs" />
     <Compile Include="Model\Map\MapList.cs" />
-    <Compile Include="Model\Map_Path\Mappath.cs" />
     <Compile Include="Model\RunAsChain.cs" />
-    <Compile Include="Model\SourceFile\SourceFilePath.cs" />
-    <Compile Include="Model\TargetFile\TargetFilePath.cs" />
     <Compile Include="Model\TransformationVariables\TransformationVariable.cs" />
     <Compile Include="Model\TransformationVariables\TransFormationVariableList.cs" />
     <Compile Include="Model\XmlToObjectBuilder.cs" />
     <Compile Include="ViewModel\Command\RelayCommand.cs" />
     <Compile Include="ViewModel\MainViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel\SubViewModel\Menu\BasViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel\SubViewModel\Menu\Delegate\MenuArgs.cs" />
     <Compile Include="ViewModel\MainViewModel\SubViewModel\Menu\Delegate\MenuDelegate.cs" />
+    <Compile Include="ViewModel\MainViewModel\SubViewModel\Menu\FileInfoViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel\SubViewModel\Menu\HelperClass\FileInfo.cs" />
     <Compile Include="ViewModel\MainViewModel\SubViewModel\Menu\Interface\IMenuMethod.cs" />
+    <Compile Include="ViewModel\MainViewModel\SubViewModel\Menu\MapViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel\SubViewModel\Menu\MenuMethods.cs" />
     <Compile Include="ViewModel\MainViewModel\SubViewModel\Menu\MenuViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel\SubViewModel\Menu\Notify.cs" />
     <Compile Include="ViewModel\MainViewModel\SubViewModel\Tab\BasViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel\SubViewModel\Tab\FileInfoViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel\SubViewModel\Tab\MapViewModel.cs" />
@@ -146,11 +143,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ViewModel\Utility\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Model\RunAsChain.xml">
       <SubType>Designer</SubType>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Model\RunAsChain1.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

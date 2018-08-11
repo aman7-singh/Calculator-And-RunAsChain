@@ -15,30 +15,29 @@
 						<Setter Property="Width" Value="100" />
 					</Style>
 				</TabControl.Resources>
-				<TabItem Header="Map"  Foreground="Blue">
+				<TabItem Header="Map" Height="auto" DataContext="{Binding MapViewModelInstance}" Foreground="Blue">					
 					<Grid>
 						<Grid.RowDefinitions>
 							<RowDefinition/>
 							<RowDefinition/>
 						</Grid.RowDefinitions>
 						<Grid Grid.Row="0">
-							<DataGrid ItemsSource="{Binding tran}" GridLinesVisibility="All" Background="Bisque">
+							<DataGrid ItemsSource="{Binding MapList}" GridLinesVisibility="All" AutoGenerateColumns="False" MinHeight="250" Background="Bisque">
 								<DataGrid.Resources>
 									<Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
 										<Setter Property="Background" Value="GreenYellow" />
 									</Style>
 								</DataGrid.Resources>
-
 								<DataGrid.Columns>
 									<DataGridTemplateColumn Header="Map Sequence" Width="600">
 										<DataGridTemplateColumn.CellTemplate>
 											<DataTemplate>
-												<TextBlock Text="{Binding }" />
+												<TextBlock Text="{Binding MapPath}" />
 											</DataTemplate>
 										</DataGridTemplateColumn.CellTemplate>
 										<DataGridTemplateColumn.CellEditingTemplate>
 											<DataTemplate>
-												<TextBox Text="{Binding}"/>
+												<TextBox Text="{Binding MapPath}"/>
 											</DataTemplate>
 										</DataGridTemplateColumn.CellEditingTemplate>
 									</DataGridTemplateColumn>
@@ -59,14 +58,14 @@
 						</Grid>
 					</Grid>
 				</TabItem>
-				<TabItem Header="Bas" Foreground="Red">
+				<TabItem Header="Bas" DataContext="{Binding BasViewModelInstance}" Foreground="Red">
 					<Grid>
 						<Grid.RowDefinitions>
 							<RowDefinition/>
 							<RowDefinition/>
 						</Grid.RowDefinitions>
 						<Grid Grid.Row="0">
-							<DataGrid ItemsSource="{Binding}" GridLinesVisibility="All" Background="Bisque">
+							<DataGrid ItemsSource="{Binding BasList}" AutoGenerateColumns="False" GridLinesVisibility="All" Background="Bisque">
 								<DataGrid.Resources>
 									<Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
 										<Setter Property="Background" Value="GreenYellow" />
@@ -77,12 +76,12 @@
 									<DataGridTemplateColumn Header="Bas" Width="600">
 										<DataGridTemplateColumn.CellTemplate>
 											<DataTemplate>
-												<TextBlock Text="run1.xml" />
+												<TextBlock Text="{Binding }" />
 											</DataTemplate>
 										</DataGridTemplateColumn.CellTemplate>
 										<DataGridTemplateColumn.CellEditingTemplate>
 											<DataTemplate>
-												<TextBox Text="abc"/>
+												<TextBox Text="{Binding }"/>
 											</DataTemplate>
 										</DataGridTemplateColumn.CellEditingTemplate>
 									</DataGridTemplateColumn>
@@ -103,14 +102,14 @@
 						</Grid>
 					</Grid>
 				</TabItem>
-				<TabItem Header="File" Foreground="Green">
+				<TabItem Header="File" DataContext="{Binding FileInfoViewModelInstance}" Foreground="Green">
 					<Grid>
 						<Grid.RowDefinitions>
 							<RowDefinition/>
 							<RowDefinition/>
 						</Grid.RowDefinitions>
 						<Grid Grid.Row="0">
-							<DataGrid ItemsSource="{Binding}" GridLinesVisibility="All" Background="Bisque">
+							<DataGrid ItemsSource="{Binding FileInfo}" AutoGenerateColumns="False" GridLinesVisibility="All" Background="Bisque">
 								<DataGrid.Resources>
 									<Style BasedOn="{StaticResource {x:Type DataGridCell}}" TargetType="{x:Type DataGridCell}">
 										<Setter Property="BorderBrush" Value="Black"/>
@@ -124,24 +123,19 @@
 									<DataGridTemplateColumn Header="File Type" Width="100">
 										<DataGridTemplateColumn.CellTemplate>
 											<DataTemplate>
-												<TextBlock Text="run1.xml" />
+												<TextBlock Text="{Binding Type}" />
 											</DataTemplate>
 										</DataGridTemplateColumn.CellTemplate>
-										<DataGridTemplateColumn.CellEditingTemplate>
-											<DataTemplate>
-												<TextBox Text="abc"/>
-											</DataTemplate>
-										</DataGridTemplateColumn.CellEditingTemplate>
 									</DataGridTemplateColumn>
 									<DataGridTemplateColumn Header="File Path" Width="500">
 										<DataGridTemplateColumn.CellTemplate>
 											<DataTemplate>
-												<TextBlock Text="run1.xml" />
+												<TextBlock Text="{Binding Path}" />
 											</DataTemplate>
 										</DataGridTemplateColumn.CellTemplate>
 										<DataGridTemplateColumn.CellEditingTemplate>
 											<DataTemplate>
-												<TextBox Text="abc"/>
+												<TextBox Text="{Binding Path}"/>
 											</DataTemplate>
 										</DataGridTemplateColumn.CellEditingTemplate>
 									</DataGridTemplateColumn>
