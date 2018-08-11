@@ -24,13 +24,13 @@ namespace RunAsChain.Model
             set { _runAsChainFile = value; }
         }
 
-        public XmlToObjectBuilder()
-        {
-            ModelObj();
-        }
+        //public XmlToObjectBuilder()
+        //{
+        //    ModelObj();
+        //}
 
 
-        public IRunAsChain ModelObj()
+        public List<IMap> ModelObj( string RunAsChainFile)
         {
             var xml = XDocument.Load(RunAsChainFile);
             var RunAsChainXml = xml?.Descendants("Map")
@@ -79,9 +79,8 @@ namespace RunAsChain.Model
 
                 ml.Add(new Map.Map(mp, sp, tp, bl, tl));
             }
-
-            RunAsChain s = new RunAsChain(ml);
-            return s;
+            
+            return ml;
         }
     }
 }

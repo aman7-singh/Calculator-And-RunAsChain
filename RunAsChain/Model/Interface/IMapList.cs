@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace RunAsChain.Model.Interface
 {
-    interface IMapList
+    public interface IMapList
     {
-        List<IMap> maps { get; set; }
+        ObservableCollection<IMap> maps { get; set; }
     }
 }

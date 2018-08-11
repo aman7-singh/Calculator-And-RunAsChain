@@ -22,7 +22,7 @@
 							<RowDefinition/>
 						</Grid.RowDefinitions>
 						<Grid Grid.Row="0">
-							<DataGrid ItemsSource="{Binding}" GridLinesVisibility="All" Background="Bisque">
+							<DataGrid ItemsSource="{Binding tran}" GridLinesVisibility="All" Background="Bisque">
 								<DataGrid.Resources>
 									<Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
 										<Setter Property="Background" Value="GreenYellow" />
@@ -33,12 +33,12 @@
 									<DataGridTemplateColumn Header="Map Sequence" Width="600">
 										<DataGridTemplateColumn.CellTemplate>
 											<DataTemplate>
-												<TextBlock Text="run1.xml" />
+												<TextBlock Text="{Binding }" />
 											</DataTemplate>
 										</DataGridTemplateColumn.CellTemplate>
 										<DataGridTemplateColumn.CellEditingTemplate>
 											<DataTemplate>
-												<TextBox Text="abc"/>
+												<TextBox Text="{Binding}"/>
 											</DataTemplate>
 										</DataGridTemplateColumn.CellEditingTemplate>
 									</DataGridTemplateColumn>

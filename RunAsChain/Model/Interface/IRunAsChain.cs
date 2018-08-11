@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RunAsChain.Model.Interface
 {
-    public class IRunAsChain
+    public interface IRunAsChain
     {
         IMapList Chain { get; set; }
     }

@@ -11,8 +11,7 @@ namespace RunAsChain.ViewModel.MainViewModel
     {
         public MainViewModel()
         {
-            XmlToObjectBuilder x = new XmlToObjectBuilder();
-            var ChainObject = x.ModelObj();
+            
         }
     }
 }
