@@ -35,19 +35,25 @@ namespace RunAsChain.Model
 
             
             var Trans =  RunAsChainXml.ToList();
+
             var ml = new ObservableCollection<IMap>();
-            foreach(var item in RunAsChainXml)
+            
+            foreach (var item in RunAsChainXml)
             {
                 string mp = item.MapFilePath;
                 string sp =  item.SourceFilePath;
                 string tp = item.TargetFilePath;
-                var basobj = new ObservableCollection<string>();
-
+                ICodeModule basobj = new CodeModule.CodeModule();
+                var BasList = new ObservableCollection<ICodeModule>();
                 foreach (var bas in item.BasFiles)
                 {
-                    basobj.Add(bas.BasPath);
+                    basobj = new CodeModule.CodeModule()
+                    {
+                        BasPath = bas.BasPath
+                    };
+                    BasList.Add(basobj);
                 }
-                var bl = new CodeModules(basobj);
+                var bl = new CodeModules(BasList);
 
                 var Transobj = new ObservableCollection<ITransformationVariable>();
                 foreach (var tran in item.TransformationVariable)
@@ -61,5 +67,6 @@ namespace RunAsChain.Model
             
             return ml;
         }
+        
     }
 }

@@ -28,5 +28,19 @@
       <Variable Value="C" IsPublic="Yes" InitialValue="0"/>
     </TransformationVariables>
   </Map>
+  <Map Sequence="3">
+    <MapFilePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\3New1 Text Document.txt"/>
+    <SourceFilePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\3New1 Text Document1.txt"/>
+    <TargetFilePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\3New1 Text Document2.txt"/>
+    <CodeModules>
+      <CodeModulePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\3New1 Text Document3.txt"/>
+      <CodeModulePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\3New1 Text Document4.txt"/>
+    </CodeModules>
+    <TransformationVariables>
+      <Variable Value="A" IsPublic="Yes" InitialValue="0"/>
+      <Variable Value="B" IsPublic="Yes" InitialValue="0"/>
+      <Variable Value="C" IsPublic="Yes" InitialValue="0"/>
+    </TransformationVariables>
+  </Map>
 </Transformation>
 

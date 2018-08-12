@@ -9,6 +9,6 @@ namespace RunAsChain.Model.Interface
 {
     public interface ICodeModules
     {
-        ObservableCollection<string> BasFilePathList { get; }
+        ObservableCollection<ICodeModule> BasFilePathList { get; }
     }
 }

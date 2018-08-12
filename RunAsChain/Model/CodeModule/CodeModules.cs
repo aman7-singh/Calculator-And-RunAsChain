@@ -10,8 +10,8 @@ namespace RunAsChain.Model.CodeModule
 {
     public class CodeModules : ICodeModules
     {
-        public ObservableCollection<string> BasFilePathList { get; set; }
-        public CodeModules(ObservableCollection<string> _basFilePath)
+        public ObservableCollection<ICodeModule> BasFilePathList { get; set; }
+        public CodeModules(ObservableCollection<ICodeModule> _basFilePath)
         {
             this.BasFilePathList = _basFilePath;
         }

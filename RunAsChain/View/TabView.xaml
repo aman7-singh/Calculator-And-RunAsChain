@@ -76,12 +76,12 @@
 									<DataGridTemplateColumn Header="Bas" Width="600">
 										<DataGridTemplateColumn.CellTemplate>
 											<DataTemplate>
-												<TextBlock Text="{Binding }" />
+												<TextBlock Text="{Binding BasPath}" />
 											</DataTemplate>
 										</DataGridTemplateColumn.CellTemplate>
 										<DataGridTemplateColumn.CellEditingTemplate>
 											<DataTemplate>
-												<TextBox Text="{Binding }"/>
+												<TextBox Text="{Binding BasPath}"/>
 											</DataTemplate>
 										</DataGridTemplateColumn.CellEditingTemplate>
 									</DataGridTemplateColumn>

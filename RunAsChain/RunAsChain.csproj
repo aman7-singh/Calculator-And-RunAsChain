@@ -54,7 +54,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\CodeModule\CodeModule.cs" />
     <Compile Include="Model\CodeModule\CodeModules.cs" />
+    <Compile Include="Model\Interface\ICodeModule.cs" />
     <Compile Include="Model\Interface\ICodeModules.cs" />
     <Compile Include="Model\Interface\IMap.cs" />
     <Compile Include="Model\Interface\IMapList.cs" />

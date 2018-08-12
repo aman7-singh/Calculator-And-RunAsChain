@@ -10,6 +10,6 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Tab
 {
     public class BasViewModel:ICodeModules
     {
-        public ObservableCollection<string> BasFilePathList { get; set; }
+        public ObservableCollection<ICodeModule> BasFilePathList { get; set; }
     }
 }

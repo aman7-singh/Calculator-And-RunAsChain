@@ -16,7 +16,7 @@
 			<RowDefinition/>
 		</Grid.RowDefinitions>
 		<Grid Grid.Row="0">
-			<DataGrid ItemsSource="{Binding ChainList}" GridLinesVisibility="All" Background="Bisque">
+			<DataGrid ItemsSource="{Binding ChainList}" SelectedItem="{Binding SelectedChain}" GridLinesVisibility="All" AutoGenerateColumns="False" Background="Bisque">
 				<DataGrid.Resources>
 					<Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
 						<Setter Property="Background" Value="GreenYellow" />
@@ -27,12 +27,12 @@
 					<DataGridTemplateColumn Header="Run as chain" Width="600">
 						<DataGridTemplateColumn.CellTemplate>
 							<DataTemplate>
-								<TextBlock Text="{Binding }" />
+								<TextBlock Text="{Binding ChainPath}" />
 							</DataTemplate>
 						</DataGridTemplateColumn.CellTemplate>
 						<DataGridTemplateColumn.CellEditingTemplate>
 							<DataTemplate>
-								<TextBox Text="{Binding }"/>
+								<TextBox Text="{Binding ChainPath}"/>
 							</DataTemplate>
 						</DataGridTemplateColumn.CellEditingTemplate>
 					</DataGridTemplateColumn>

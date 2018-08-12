@@ -10,6 +10,7 @@ namespace RunAsChain.Model
 {
     public class RunAsChain : IRunAsChain
     {
-        public IMapList Chain { get; set; }
+        public ObservableCollection<IMap> Chain { get; set; }
+        public string ChainPath { get; set; }
     }
 }

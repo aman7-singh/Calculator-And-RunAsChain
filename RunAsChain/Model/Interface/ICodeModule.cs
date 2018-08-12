@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace RunAsChain.Model.Interface
 {
-    public interface IMapList
+    public interface ICodeModule
     {
-        string ChainPath { get; set; }
-        ObservableCollection<IMap> maps { get; set; }
+        string BasPath { get; set; }
     }
 }

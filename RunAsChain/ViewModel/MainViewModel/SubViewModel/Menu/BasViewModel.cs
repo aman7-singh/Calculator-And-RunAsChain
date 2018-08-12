@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RunAsChain.Model.Interface;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -9,8 +10,8 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Menu
 {
     public class BasViewModel:Notify
     {
-        private ObservableCollection<string> _MapList = new ObservableCollection<string>();
-        public ObservableCollection<string> BasList
+        private ObservableCollection<ICodeModule> _MapList = new ObservableCollection<ICodeModule>();
+        public ObservableCollection<ICodeModule> BasList
         {
             get { return _MapList; }
             set
@@ -19,7 +20,7 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Menu
                 RaisePropertyChanged(this, "BasList");
             }
         }
-        public BasViewModel(string path, ObservableCollection<string> bas)
+        public BasViewModel(string path, ObservableCollection<ICodeModule> bas)
         {
             BasList = bas;
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace RunAsChain.Model.Interface
 {
     public interface IRunAsChain
     {
-        IMapList Chain { get; set; }
+        ObservableCollection<IMap> Chain { get; set; }
+        string ChainPath { get; set; }
     }
 }

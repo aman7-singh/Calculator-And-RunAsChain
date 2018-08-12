@@ -24,23 +24,12 @@ namespace RunAsChain.ViewModel.MainViewModel
                 RaisePropertyChanged(this, "MapList");
             }
         }
-        //private ObservableCollection<string> _basList = new ObservableCollection<string>();
-        //public ObservableCollection<string> BasList
-        //{
-        //    get { return _basList; }
-        //    set
-        //    {
-        //        _basList = value;
-        //        RaisePropertyChanged(this, "BasList");
-        //    }
-        //}
         public MainViewModel()
         {
-            XmlToObjectBuilder x = new XmlToObjectBuilder();
-            MapList = x.ModelObj(path);
+            //XmlToObjectBuilder x = new XmlToObjectBuilder();
+            //MapList = x.ModelObj(path);
             
         }
-        private object _mapViewModelInstance;
         public object MapViewModelInstance
         {
             get
@@ -64,11 +53,17 @@ namespace RunAsChain.ViewModel.MainViewModel
         }
         public object BasInstance()
         {
-            var BasList = new ObservableCollection<string>();
-            foreach(var item in MapList)
+            var BasList = new ObservableCollection<ICodeModule>();
+            var TempList = new ObservableCollection<ICodeModule>();
+            foreach (var item in MapList)
             {
-               BasList= item.BasPaths.BasFilePathList;
+               //BasList= item.BasPaths.BasFilePathList;
+               foreach(var b in item.BasPaths.BasFilePathList)
+                {
+                    TempList.Add(b);
+                }
             }
+            BasList = TempList;
             BasViewModel BasInstance = new BasViewModel(path, BasList);
             return BasInstance;
         }
@@ -77,20 +72,6 @@ namespace RunAsChain.ViewModel.MainViewModel
             MapViewModel MapInstance = new MapViewModel(path, MapList);
             return MapInstance;
         }
-        //public object FileInstance()
-        //{
-        //    List<string> FilepathList = new List<string>();
-        //    List<string> FileTypList = new List<string>();
-        //    foreach (var item in MapList)
-        //    {
-        //        FilepathList.Add(item.SrcPath);
-        //        FileTypList.Add("Source");
-        //        FilepathList.Add(item.TrgtPath);
-        //        FileTypList.Add("Target");
-        //    }
-        //    FileInfoViewModel FileInstace = new FileInfoViewModel(FileTypList, FilepathList);
-        //    return FileInstace;
-        //}
         public object FileInstance()
         {
             List<FileInfo> FilepathList = new List<FileInfo>();
