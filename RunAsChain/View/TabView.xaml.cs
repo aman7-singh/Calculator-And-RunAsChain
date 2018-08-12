@@ -21,7 +21,7 @@ namespace RunAsChain.View
     public partial class TabView : UserControl
     {
         public TabView()
-        {
+        {            
             InitializeComponent();
         }
     }

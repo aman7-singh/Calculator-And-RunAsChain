@@ -16,13 +16,9 @@
 					</Style>
 				</TabControl.Resources>
 				<TabItem Header="Map" Height="auto" DataContext="{Binding MapViewModelInstance}" Foreground="Blue">					
-					<Grid>
-						<Grid.RowDefinitions>
-							<RowDefinition/>
-							<RowDefinition/>
-						</Grid.RowDefinitions>
-						<Grid Grid.Row="0">
-							<DataGrid ItemsSource="{Binding MapList}" GridLinesVisibility="All" AutoGenerateColumns="False" MinHeight="250" Background="Bisque">
+					<Grid>						
+						<Grid >
+							<DataGrid Name="MapTabDataGrid" ItemsSource="{Binding MapList}" GridLinesVisibility="All" AutoGenerateColumns="False"  Background="Bisque">
 								<DataGrid.Resources>
 									<Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
 										<Setter Property="Background" Value="GreenYellow" />
@@ -59,12 +55,8 @@
 					</Grid>
 				</TabItem>
 				<TabItem Header="Bas" DataContext="{Binding BasViewModelInstance}" Foreground="Red">
-					<Grid>
-						<Grid.RowDefinitions>
-							<RowDefinition/>
-							<RowDefinition/>
-						</Grid.RowDefinitions>
-						<Grid Grid.Row="0">
+					<Grid>						
+						<Grid >
 							<DataGrid ItemsSource="{Binding BasList}" AutoGenerateColumns="False" GridLinesVisibility="All" Background="Bisque">
 								<DataGrid.Resources>
 									<Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
@@ -103,17 +95,10 @@
 					</Grid>
 				</TabItem>
 				<TabItem Header="File" DataContext="{Binding FileInfoViewModelInstance}" Foreground="Green">
-					<Grid>
-						<Grid.RowDefinitions>
-							<RowDefinition/>
-							<RowDefinition/>
-						</Grid.RowDefinitions>
-						<Grid Grid.Row="0">
+					<Grid>						
+						<Grid>
 							<DataGrid ItemsSource="{Binding FileInfo}" AutoGenerateColumns="False" GridLinesVisibility="All" Background="Bisque">
 								<DataGrid.Resources>
-									<Style BasedOn="{StaticResource {x:Type DataGridCell}}" TargetType="{x:Type DataGridCell}">
-										<Setter Property="BorderBrush" Value="Black"/>
-									</Style>
 									<Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
 										<Setter Property="Background" Value="GreenYellow" />
 									</Style>

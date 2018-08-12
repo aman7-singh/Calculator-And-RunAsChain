@@ -11,11 +11,7 @@
 		<TransformationViewModelm:TransformationViewModel/>
 	</UserControl.DataContext>
 	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition/>
-			<RowDefinition/>
-		</Grid.RowDefinitions>
-		<Grid Grid.Row="0">
+		<Grid>
 			<DataGrid ItemsSource="{Binding ChainList}" SelectedItem="{Binding SelectedChain}" GridLinesVisibility="All" AutoGenerateColumns="False" Background="Bisque">
 				<DataGrid.Resources>
 					<Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">

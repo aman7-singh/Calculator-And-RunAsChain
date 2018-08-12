@@ -31,7 +31,7 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Transformations
             set
             {
                 _mapList = value;
-                RaisePropertyChanged(this, "MapList");
+                RaisePropertyChanged(MapViewModelInstance, "MapList");
             }
         }
         string path = @"C:\Users\1994a\source\repos\Calculator\RunAsChain\Model\RunAsChain1.xml";
@@ -78,6 +78,7 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Transformations
                     MapList = ch.Chain;
                 }
             }
+            MapInstance();
         }
         public object MapViewModelInstance
         {
