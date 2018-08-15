@@ -11,7 +11,7 @@
 	<UserControl.Resources>
 		<Menu:MenuViewModel x:Key="MenuViewModel"/>
 	</UserControl.Resources>
-	<Grid  DataContext="{StaticResource MenuViewModel}">
+	<Grid  >
 		<Grid>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition/>

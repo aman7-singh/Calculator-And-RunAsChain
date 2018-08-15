@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RunAsChain"
 		xmlns:Transformations="clr-namespace:RunAsChain.View"
         mc:Ignorable="d"
-		DataContext="{StaticResource MainViewModel}"
+		DataContext="{StaticResource TransformationViewModel}"
         Title="MainWindow" Height="450" Width="800">
 	
     <Grid>

@@ -15,10 +15,10 @@
 						<Setter Property="Width" Value="100" />
 					</Style>
 				</TabControl.Resources>
-				<TabItem Header="Map" Height="auto" DataContext="{Binding MapViewModelInstance}" Foreground="Blue">					
+				<TabItem Header="Map" Height="auto" Foreground="Blue">					
 					<Grid>						
 						<Grid >
-							<DataGrid Name="MapTabDataGrid" ItemsSource="{Binding MapList}" GridLinesVisibility="All" AutoGenerateColumns="False"  Background="Bisque">
+							<DataGrid Name="MapTabDataGrid" ItemsSource="{Binding MapList}" SelectedItem="{Binding SelectedMap}" GridLinesVisibility="All" AutoGenerateColumns="False"  Background="Bisque">
 								<DataGrid.Resources>
 									<Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
 										<Setter Property="Background" Value="GreenYellow" />
@@ -54,10 +54,10 @@
 						</Grid>
 					</Grid>
 				</TabItem>
-				<TabItem Header="Bas" DataContext="{Binding BasViewModelInstance}" Foreground="Red">
+				<TabItem Header="Bas" Foreground="Red">
 					<Grid>						
 						<Grid >
-							<DataGrid ItemsSource="{Binding BasList}" AutoGenerateColumns="False" GridLinesVisibility="All" Background="Bisque">
+							<DataGrid ItemsSource="{Binding BasPathList}" SelectedItem="{Binding SelectedMap}" AutoGenerateColumns="False" GridLinesVisibility="All" Background="Bisque">
 								<DataGrid.Resources>
 									<Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
 										<Setter Property="Background" Value="GreenYellow" />
@@ -94,10 +94,10 @@
 						</Grid>
 					</Grid>
 				</TabItem>
-				<TabItem Header="File" DataContext="{Binding FileInfoViewModelInstance}" Foreground="Green">
+				<TabItem Header="File" Foreground="Green">
 					<Grid>						
 						<Grid>
-							<DataGrid ItemsSource="{Binding FileInfo}" AutoGenerateColumns="False" GridLinesVisibility="All" Background="Bisque">
+							<DataGrid ItemsSource="{Binding FilePathList}" AutoGenerateColumns="False" GridLinesVisibility="All" Background="Bisque">
 								<DataGrid.Resources>
 									<Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
 										<Setter Property="Background" Value="GreenYellow" />

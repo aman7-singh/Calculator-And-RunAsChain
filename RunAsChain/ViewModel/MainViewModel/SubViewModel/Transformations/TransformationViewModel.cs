@@ -13,27 +13,45 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Transformations
 {
     public class TransformationViewModel : Notify
     {
-        private List<IRunAsChain> TempList = new List<IRunAsChain>();
-        private List<IRunAsChain> _chainList;
-        public List<IRunAsChain> ChainList
+        private ObservableCollection<IRunAsChain> TempList = new ObservableCollection<IRunAsChain>();
+        private ObservableCollection<IRunAsChain> _chainList = new ObservableCollection<IRunAsChain>();
+        public ObservableCollection<IRunAsChain> ChainList
         {
             get { return _chainList; }
             set
             {
                 _chainList = value;
-                RaisePropertyChanged(this, "ChainList");
             }
         }
-        private ObservableCollection<IMap> _mapList;
+        private ObservableCollection<IMap> _mapList = new ObservableCollection<IMap>();
         public ObservableCollection<IMap> MapList
         {
             get { return _mapList; }
             set
             {
                 _mapList = value;
-                RaisePropertyChanged(MapViewModelInstance, "MapList");
             }
         }
+        private ObservableCollection<ICodeModule> _basPathList = new ObservableCollection<ICodeModule>();
+        public ObservableCollection<ICodeModule> BasPathList
+        {
+            get { return _basPathList; }
+            set
+            {
+                _basPathList = value;
+            }
+        }
+
+        private ObservableCollection<FileInfo> _filePathList = new ObservableCollection<FileInfo>();
+        public ObservableCollection<FileInfo> FilePathList
+        {
+            get { return _filePathList; }
+            set
+            {
+                _filePathList = value;
+            }
+        }
+
         string path = @"C:\Users\1994a\source\repos\Calculator\RunAsChain\Model\RunAsChain1.xml";
         string path2 = @"C:\Users\1994a\source\repos\Calculator\RunAsChain\Model\RunAsChain.xml";
 
@@ -42,13 +60,66 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Transformations
         {
             get
             {
+                if(_selectedChain ==null)
+                {
+                    _selectedChain = ChainList[0];
+                }
+                ObjectFilter(_selectedChain);
                 return _selectedChain;
             }
             set
             {
                 _selectedChain = value;
-                ObjectFilter(value.ChainPath);
+               
             }
+        }
+        private IMap _selectedMap;
+        public IMap SelectedMap
+        {
+            get
+            {
+                if (_selectedMap == null)
+                {
+                    if(MapList.Count>0)
+                    _selectedMap = MapList[0];
+                    else
+                        return _selectedMap;
+                }
+                ObjectFilter(_selectedMap);
+                return _selectedMap;
+            }
+            set
+            {
+                _selectedMap = value;
+
+            }
+        }
+        public void ObjectFilter(IMap SelectedMap)
+        {
+            BasPathList.Clear();
+            foreach (var ch in SelectedMap.BasPaths.BasFilePathList)
+            {
+                BasPathList.Add(ch);
+            }
+            FilePathList.Clear();
+            var srcpath = new FileInfo()
+            {
+                Path = SelectedMap.SrcPath,
+                Type = "Source",
+            };
+            var tgtpath = new FileInfo()
+            {
+                Path = SelectedMap.TrgtPath,
+                Type = "Target",
+            };
+            var Mappath = new FileInfo()
+            {
+                Path = SelectedMap.MapPath,
+                Type = "Map",
+            };
+            FilePathList.Add(srcpath);
+            FilePathList.Add(tgtpath);
+            FilePathList.Add(Mappath);
         }
         public TransformationViewModel()
         {
@@ -66,20 +137,18 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Transformations
                 ChainList = TempList;
                 i++;
             }
-            ObjectFilter(ChainList[0].ChainPath);
         }
 
-        public void ObjectFilter(string SelChain)
+        public void ObjectFilter(IRunAsChain SelChain)
         {
-            foreach (var ch in ChainList)
+            MapList.Clear();
+            foreach (var ch in SelChain.Chain)
             {
-                if (ch.ChainPath == SelChain)
-                {
-                    MapList = ch.Chain;
-                }
+                MapList.Add(ch);
             }
-            MapInstance();
+            ObjectFilter(MapList[0]);
         }
+        
         public object MapViewModelInstance
         {
             get

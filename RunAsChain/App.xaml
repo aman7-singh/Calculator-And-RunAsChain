@@ -5,6 +5,6 @@
 			 xmlns:ViewModel="clr-namespace:RunAsChain.ViewModel.MainViewModel.SubViewModel.Transformations"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-		<ViewModel:TransformationViewModel x:Key="MainViewModel" />
+		<ViewModel:TransformationViewModel x:Key="TransformationViewModel" />
 	</Application.Resources>
 </Application>
