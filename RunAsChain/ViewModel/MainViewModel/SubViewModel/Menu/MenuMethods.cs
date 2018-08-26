@@ -1,6 +1,7 @@
 ﻿using RunAsChain.Model;
 using RunAsChain.Model.Interface;
 using RunAsChain.Model.Map;
+using RunAsChain.ViewModel.Command;
 using RunAsChain.ViewModel.MainViewModel.SubViewModel.Menu.Delegate;
 using RunAsChain.ViewModel.MainViewModel.SubViewModel.Menu.Interface;
 using RunAsChain.ViewModel.MainViewModel.SubViewModel.Tab;
@@ -12,50 +13,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
+using System.Xml.Linq;
 
 namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Menu
 {
     public class MenuMethods: Notify, IMenuMethod
     {
-        MenuArgs args = new MenuArgs();
-        private ObservableCollection<string> _chainList =new ObservableCollection<string>();
-        public ObservableCollection<string> ChainList
-        {
-            get { return _chainList; }
-            set
-            {
-                _chainList = value;
-                RaisePropertyChanged(this, "ChainList");
-            }
-        }
-        private ObservableCollection<IMap> _MapList = new ObservableCollection<IMap>();
-        public ObservableCollection<IMap> MapList
-        {
-            get { return _MapList; }
-            set
-            {
-                _MapList = value;
-                RaisePropertyChanged(this,"MapList");
-            }
-        }
-        private ObservableCollection<ICodeModules> _basList = new ObservableCollection<ICodeModules>();
-        public ObservableCollection<ICodeModules> BasList
-        {
-            get { return _basList; }
-            set
-            {
-                _basList = value;
-                RaisePropertyChanged(this, "BasList");
-            }
-        }
         public MenuMethods()
         {
-
+            //IMenuMethod method = new MenuMethods();
+            NewCommand = new RelayCommand(CreateNewChain);
+            OpenCommand = new RelayCommand(OpenChain);
+            SaveCommand = new RelayCommand(SaveChain);
+            SaveAsCommand = new RelayCommand(SaveAsChain);
+            RunCommand = new RelayCommand(RunChain);
+            RunAllCommand = new RelayCommand(RunAllChain);
         }
+
+        public ICommand OpenCommand { get; set; }
+        public ICommand SaveCommand { get; set; }
+        public ICommand SaveAsCommand { get; set; }
+        public ICommand NewCommand { get; set; }
+        public ICommand RunCommand { get; set; }
+        public ICommand RunAllCommand { get; set; }
         public void CreateNewChain(object obj)
-        {            
-            args.SelectedItem = "Done";
-                OnMethodChanged(this, args);
+        {   
+
         }
 
         public void OpenChain(object obj)
@@ -74,15 +58,30 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Menu
 
         public void SaveAsChain(object obj)
         {
-            var args = new MenuArgs();
-            args.SelectedItem = "asd";
-            MethodChanged(obj, args);
-            //throw new NotImplementedException();
+            
         }
 
         public void SaveChain(object obj)
         {
-            //throw new NotImplementedException();
+            TransformationViewModel TChain = new TransformationViewModel();
+            var a = TChain.ChainList;
+            var val = TChain.SelectedChain;
+
+            XDocument doc = new XDocument(
+                new XDeclaration("1.0", "utf-8", "yes"),
+                new XComment("Creating object to xml"),
+                new XElement("Transformation",
+                //foreach(var map in val.Chain)
+
+                new XElement("Map", new XAttribute("Sequence","0"),
+                new XElement("MapFilePath", "1"),
+                new XElement("TargetFilePath", "1"),
+                new XElement("CodeModules", 
+                //foreach(var path in val.
+                new XElement("CodeModulePath","1"))
+
+                )
+                ));
         }
 
         public event MethodeToTrigger MethodChanged;

@@ -8,9 +8,9 @@
              mc:Ignorable="d" 
 			 
              d:DesignHeight="450" d:DesignWidth="800">
-	<UserControl.Resources>
-		<Menu:MenuViewModel x:Key="MenuViewModel"/>
-	</UserControl.Resources>
+	<UserControl.DataContext>
+		<Menu:MenuMethods />
+	</UserControl.DataContext>
 	<Grid  >
 		<Grid>
 			<Grid.ColumnDefinitions>
@@ -22,7 +22,7 @@
 			</Grid.ColumnDefinitions>
 			<Button Width="auto" Grid.Column="0" Content="new" Command="{Binding NewCommand}"/>
 			<Button Width="auto" Grid.Column="1" Content="open" Command="{Binding OpenCommand}"/>
-			<Button Width="auto" Grid.Column="2" Content="save" Command="{Binding SaveCommand}"/>
+			<Button Width="auto" Grid.Column="2" Content="save" Command="{Binding SaveCommand}" CommandParameter="{Binding SelectedMap}"/>
 			<Button Width="auto" Grid.Column="3" Content="save as"/>
 			<Button Width="auto" Grid.Column="4" Content="run all"/>
 			<Button Width="auto" Grid.Column="5" Content="run selcted"/>

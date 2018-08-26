@@ -1,5 +1,6 @@
 ﻿using RunAsChain.Model;
 using RunAsChain.Model.Interface;
+using RunAsChain.ViewModel.Command;
 using RunAsChain.ViewModel.MainViewModel.SubViewModel.Menu;
 using RunAsChain.ViewModel.MainViewModel.SubViewModel.Menu.HelperClass;
 using System;
@@ -26,7 +27,9 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Transformations
         private ObservableCollection<IMap> _mapList = new ObservableCollection<IMap>();
         public ObservableCollection<IMap> MapList
         {
-            get { return _mapList; }
+            get
+            {// Mediator.GetInstance().ChainChanged+= (s,e) => ObjectFilter(SelectedChain);
+                return _mapList; }
             set
             {
                 _mapList = value;
@@ -45,7 +48,11 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Transformations
         private ObservableCollection<FileInfo> _filePathList = new ObservableCollection<FileInfo>();
         public ObservableCollection<FileInfo> FilePathList
         {
-            get { return _filePathList; }
+            get
+             {
+                //Mediator.GetInstance().MapChanged += (s, e) => ObjectFilter(SelectedMap);
+                return _filePathList;
+            }
             set
             {
                 _filePathList = value;
@@ -60,7 +67,7 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Transformations
         {
             get
             {
-                if(_selectedChain ==null)
+                if (_selectedChain == null)
                 {
                     _selectedChain = ChainList[0];
                 }
@@ -70,7 +77,7 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Transformations
             set
             {
                 _selectedChain = value;
-               
+                //Mediator.GetInstance().OnChainChanged(this, value);
             }
         }
         private IMap _selectedMap;
@@ -80,9 +87,6 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Transformations
             {
                 if (_selectedMap == null)
                 {
-                    if(MapList.Count>0)
-                    _selectedMap = MapList[0];
-                    else
                         return _selectedMap;
                 }
                 ObjectFilter(_selectedMap);
@@ -91,7 +95,8 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Transformations
             set
             {
                 _selectedMap = value;
-
+                //if(value!=null)
+                //Mediator.GetInstance().OnMapChanged(this, (IMap)value);
             }
         }
         public void ObjectFilter(IMap SelectedMap)
@@ -133,8 +138,8 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Transformations
                     ChainPath = PathList[i],
                     Chain = x.ModelObj(PathList[i])
                 };
-                TempList.Add(ChainObj);
-                ChainList = TempList;
+                ChainList.Add(ChainObj);
+               // ChainList = TempList;
                 i++;
             }
         }
@@ -147,75 +152,6 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Transformations
                 MapList.Add(ch);
             }
             ObjectFilter(MapList[0]);
-        }
-        
-        public object MapViewModelInstance
-        {
-            get
-            {
-                return MapInstance();
-            }
-        }
-        public object BasViewModelInstance
-        {
-            get
-            {
-                return BasInstance();
-            }
-        }
-        public object FileInfoViewModelInstance
-        {
-            get
-            {
-                return FileInstance();
-            }
-        }
-        public object BasInstance()
-        {
-            var BasList = new ObservableCollection<ICodeModule>();
-            var TempList = new ObservableCollection<ICodeModule>();
-            foreach (var item in MapList)
-            {
-                foreach (var b in item.BasPaths.BasFilePathList)
-                {
-                    TempList.Add(b);
-                }
-            }
-            BasList = TempList;
-            BasViewModel BasInstance = new BasViewModel(path, BasList);
-            return BasInstance;
-        }
-        public object MapInstance()
-        {
-            MapViewModel MapInstance = new MapViewModel(path, MapList);
-            return MapInstance;
-        }
-        public object FileInstance()
-        {
-            List<FileInfo> FilepathList = new List<FileInfo>();
-            foreach (var item in MapList)
-            {
-                var srcpath = new FileInfo()
-                {
-                    Path = item.SrcPath,
-                    Type = "Source",
-                };
-                var tgtpath = new FileInfo()
-                {
-                    Path = item.TrgtPath,
-                    Type = "Target",
-                };
-                var Mappath = new FileInfo()
-                {
-                    Path = item.MapPath,
-                    Type = "Map",
-                };
-                FilepathList.Add(srcpath);
-                FilepathList.Add(tgtpath);
-                FilepathList.Add(Mappath);
-            }
-            FileInfoViewModel FileInstace = new FileInfoViewModel(FilepathList);
-            return FileInstace;
         }
     }
 }

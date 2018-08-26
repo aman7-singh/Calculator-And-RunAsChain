@@ -69,6 +69,8 @@
     <Compile Include="Model\TransformationVariables\TransformationVariable.cs" />
     <Compile Include="Model\TransformationVariables\TransFormationVariableList.cs" />
     <Compile Include="Model\XmlToObjectBuilder.cs" />
+    <Compile Include="ViewModel\Command\MapChangedEventArgs.cs" />
+    <Compile Include="ViewModel\Command\Mediator.cs" />
     <Compile Include="ViewModel\Command\RelayCommand.cs" />
     <Compile Include="ViewModel\MainViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel\SubViewModel\Menu\BasViewModel.cs" />
