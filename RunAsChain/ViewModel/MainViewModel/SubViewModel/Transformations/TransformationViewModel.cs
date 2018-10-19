@@ -59,9 +59,8 @@ namespace RunAsChain.ViewModel.MainViewModel.SubViewModel.Transformations
             }
         }
 
-        string path = @"C:\Users\1994a\source\repos\Calculator\RunAsChain\Model\RunAsChain1.xml";
-        string path2 = @"C:\Users\1994a\source\repos\Calculator\RunAsChain\Model\RunAsChain.xml";
-
+        string path = System.Environment.CurrentDirectory + @"\Model\RunAsChain1.xml";
+        string path2 = System.Environment.CurrentDirectory + @"\Model\RunAsChain.xml";
         private IRunAsChain _selectedChain;
         public IRunAsChain SelectedChain
         {

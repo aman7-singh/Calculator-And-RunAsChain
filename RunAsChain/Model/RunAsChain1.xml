@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Transformation>
-  <Map Sequence="1">
+<Transformation createdon="19-10-2018 12:25:50" createdby="Aman">
+  <Map Sequence="1" Name="New1 Text Document">
     <MapFilePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\New1 Text Document.txt"/>
     <SourceFilePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\New1 Text Document1.txt"/>
     <TargetFilePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\New1 Text Document2.txt"/>
@@ -14,7 +14,7 @@
       <Variable Value="C" IsPublic="No" InitialValue="1"/>
     </TransformationVariables>
   </Map>
-  <Map Sequence="2">
+  <Map Sequence="2" Name="2New1 Text Document">
     <MapFilePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\2New1 Text Document.txt"/>
     <SourceFilePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\2New1 Text Document1.txt"/>
     <TargetFilePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\2New1 Text Document2.txt"/>
@@ -28,7 +28,7 @@
       <Variable Value="C" IsPublic="Yes" InitialValue="0"/>
     </TransformationVariables>
   </Map>
-  <Map Sequence="3">
+  <Map Sequence="3" Name="3New1 Text Document">
     <MapFilePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\3New1 Text Document.txt"/>
     <SourceFilePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\3New1 Text Document1.txt"/>
     <TargetFilePath Location="C:\Users\1994a\source\repos\Calculator\RunAsChain\DataForModel\3New1 Text Document2.txt"/>
