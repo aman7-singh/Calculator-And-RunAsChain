@@ -10,6 +10,7 @@ namespace Run_As_Chain.Model.ModelClass
 {
     class TransformationModel: ITransformationModel
     {
+        private string _elementName;
         private string _createdOn;
 
         public string CreatedOn
@@ -26,8 +27,9 @@ namespace Run_As_Chain.Model.ModelClass
             set { _createdBy = value; }
         }
 
-        TransformationModel(string createdon, string createdby)
+        public TransformationModel(XmlEnum elementName, string createdon, string createdby)
         {
+            _elementName = elementName.ToString();
             _createdOn = createdon;
             _createdBy = createdby;
         }

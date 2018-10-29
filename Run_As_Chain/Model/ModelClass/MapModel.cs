@@ -47,10 +47,10 @@ namespace Run_As_Chain.Model.ModelClass
         public string TargetFilePath
         {
             get { return _targetFilePath; }
-            set { _targetFilePath = value; }
+            private set { _targetFilePath = value; }
         }
 
-        MapModel(string sequence, string name, string mapFilePath, string sourceFilePath, string targetFilePath)
+        public MapModel(XmlEnum ElementName, string sequence, string name, string mapFilePath, string sourceFilePath, string targetFilePath)
         {
             _sequence = sequence;
             _name = name;

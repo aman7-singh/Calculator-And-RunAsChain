@@ -9,6 +9,7 @@ namespace Run_As_Chain.Model.ModelClass
 {
     class VariableModel: IVariableModel
     {
+        private XmlEnum _elementName;
         private string _value;
 
         public string Value
@@ -32,8 +33,9 @@ namespace Run_As_Chain.Model.ModelClass
             // set { _initialValue = value; }
         }
 
-        VariableModel(string value, string isPublic, string initialValue)
+        public  VariableModel(XmlEnum elementName, string value, string isPublic, string initialValue)
         {
+            _elementName = elementName;
             _value = value;
             _isPublic = isPublic;
             _initialValue = initialValue;

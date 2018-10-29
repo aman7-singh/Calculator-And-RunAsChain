@@ -9,13 +9,18 @@ namespace Run_As_Chain.Model.ModelClass
 {
     class CodeModulePathModel: ICodeModulePathModel
     {
+        private XmlEnum _elementName;
         private string _codeModulePath;
 
         public string CodeModulePath
         {
             get { return _codeModulePath; }
-         //   set { _codeModulePath = value; }
         }
 
+        public CodeModulePathModel(XmlEnum elementName, string basPath)
+        {
+            _elementName = elementName;
+            _codeModulePath = basPath;
+        }
     }
 }

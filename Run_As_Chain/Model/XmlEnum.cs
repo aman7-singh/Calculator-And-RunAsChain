@@ -8,7 +8,7 @@ namespace Run_As_Chain.Model
 {
     public enum XmlEnum
     {
-        Transformation,
+        Transformation=1,
         createdon,
         createdby,
         ProcessingSteps,
