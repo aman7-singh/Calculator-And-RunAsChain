@@ -10,14 +10,15 @@ namespace Run_As_Chain.Model
 {
     public class ModelObjectBuilder
     {
-        string xmlPath = @"D:\VisualStudio\Calculator-And-RunAsChain\Run_As_Chain\Resource\RunAsChain.xml";
-        public void XmlToObject()
+        string xmlPath = @"D:\VisualStudio\Calculator-And-RunAsChain\Run_As_Chain\Resource\RunAsChain1.xml";
+        public void XmlToObject(string xmlPath)
         {
-            var doc = new XDocument(xmlPath);
+            XDocument doc = XDocument.Load(xmlPath);
             var ChainObj = from t in doc.Descendants("Transformation")
                            select new TransformationModel(XmlEnum.Transformation,
                            t.Attribute("createdon").Value,
                            t.Attribute("createdby").Value);
+
             var processingSteps = from p in doc.Descendants("ProcessingSteps")
                                   select new ProcessingStepsModel();
 
