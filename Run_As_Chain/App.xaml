@@ -2,8 +2,9 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Run_As_Chain"
+			 xmlns:MainViewModel="clr-namespace:Run_As_Chain.ViewModel"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
-    </Application.Resources>
+		<MainViewModel:MainViewModel x:Key="MainViewModel"/>
+	</Application.Resources>
 </Application>

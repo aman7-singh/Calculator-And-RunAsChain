@@ -44,6 +44,7 @@ namespace Run_As_Chain.Model
 
                 processingStepObj.AddMap( Map);
             }
+
             var ChainObj = from t in doc.Descendants("Transformation")
                            select new TransformationModel(XmlEnum.Transformation,
                            t.Attribute("createdon").Value,

@@ -4,9 +4,28 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Run_As_Chain"
+        xmlns:View="clr-namespace:Run_As_Chain.View"	
+		xmlns:Wizards="clr-namespace:Run_As_Chain.View.Wizards"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="25"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		
+		<View:Menu Grid.Row="0"/>
+		
+		<Grid Grid.Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="3*"/>
+				<ColumnDefinition Width="4"/>
+				<ColumnDefinition Width="7*"/>
+			</Grid.ColumnDefinitions>
+
+			<View:TreeView Grid.Column="0"/>
+
+			<Wizards:MapWizard Grid.Column="2"/>
+		</Grid>
+	</Grid>
 </Window>

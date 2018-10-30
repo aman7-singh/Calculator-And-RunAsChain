@@ -56,7 +56,6 @@ namespace Run_As_Chain.Model.ModelClass
         public List<CodeModulePathModel> CodeModules
         {
             get { return _codemodules; }
-            //set { _codemodules = value; }
         }
 
         private List<VariableModel> _tfVariables;
