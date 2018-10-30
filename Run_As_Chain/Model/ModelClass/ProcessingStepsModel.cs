@@ -10,17 +10,21 @@ namespace Run_As_Chain.Model.ModelClass
 {
     class ProcessingStepsModel: IProcessingStepsModel
     {
-        private ObservableCollection<IMapModel> _maps;
+        private ObservableCollection<IMapModel> _maps =new ObservableCollection<IMapModel>();
 
         public ObservableCollection<IMapModel> Maps
         {
             get { return _maps; }
-            //set { _maps = value; }
         }
 
         public void AddMap(IMapModel map)
         {
             Maps.Add(map);
+        }
+        private XmlEnum _elementName;
+        public ProcessingStepsModel(XmlEnum elementName)
+        {
+            _elementName = elementName;
         }
     }
 }

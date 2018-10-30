@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helper\IEnumerableExtension.cs" />
     <Compile Include="Model\ModelClass\CodeModulePathModel.cs" />
     <Compile Include="Model\ModelClass\CodeModulesModel.cs" />
     <Compile Include="Model\ModelClass\MapModel.cs" />

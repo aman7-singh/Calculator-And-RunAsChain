@@ -18,7 +18,7 @@ namespace Run_As_Chain.Model.ModelClass
             //set { _codemodules = value; }
         }
 
-        void AddCodeModule(ICodeModulePathModel codeModule)
+        public void AddCodeModule(ICodeModulePathModel codeModule)
         {
             CodeModules.Add(codeModule);
         }

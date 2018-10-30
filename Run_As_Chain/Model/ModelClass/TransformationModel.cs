@@ -27,11 +27,21 @@ namespace Run_As_Chain.Model.ModelClass
             set { _createdBy = value; }
         }
 
-        public TransformationModel(XmlEnum elementName, string createdon, string createdby)
+        private ProcessingStepsModel _processingStepsModel;
+
+        public ProcessingStepsModel ProcessingStepsModel
+        {
+            get { return _processingStepsModel; }
+            set { _processingStepsModel = value; }
+        }
+
+
+        public TransformationModel(XmlEnum elementName, string createdon, string createdby, ProcessingStepsModel processingSteps)
         {
             _elementName = elementName.ToString();
             _createdOn = createdon;
             _createdBy = createdby;
+            _processingStepsModel = processingSteps;
         }
     }
 }
