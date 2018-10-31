@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Run_As_Chain.Model.ModelInterface
 {
-    interface IVariableModel
+    public interface IVariableModel
     {
         string Value { get; }
         string IsPublic { get; }
         string InitialValue { get; }
+        void AddVariable(XmlEnum elementName, string value, string isPublic, string initialValue);
     }
 }

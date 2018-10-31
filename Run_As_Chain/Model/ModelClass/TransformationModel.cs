@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Run_As_Chain.Model.ModelClass
 {
-    class TransformationModel: ITransformationModel
+    public class TransformationModel: ITransformationModel
     {
-        private string _elementName;
+        private XmlEnum _elementName;
         private string _createdOn;
 
         public string CreatedOn
@@ -35,10 +35,14 @@ namespace Run_As_Chain.Model.ModelClass
             set { _processingStepsModel = value; }
         }
 
-
-        public TransformationModel(XmlEnum elementName, string createdon, string createdby, ProcessingStepsModel processingSteps)
+        public TransformationModel(XmlEnum elementName)
         {
-            _elementName = elementName.ToString();
+            _elementName = elementName;
+        }
+
+        public void AddTransformationModel(XmlEnum elementName, string createdon, string createdby, ProcessingStepsModel processingSteps)
+        {
+            _elementName = elementName;
             _createdOn = createdon;
             _createdBy = createdby;
             _processingStepsModel = processingSteps;

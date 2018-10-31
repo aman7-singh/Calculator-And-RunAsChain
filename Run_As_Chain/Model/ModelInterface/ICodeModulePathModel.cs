@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Run_As_Chain.Model.ModelInterface
 {
-    interface ICodeModulePathModel
+    public interface ICodeModulePathModel
     {
         string CodeModulePath { get; }
     }

@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Run_As_Chain.Model.ModelInterface
 {
-    interface ITransformationVariablesModel
+    public interface ITransformationVariablesModel
     {
         ObservableCollection<IVariableModel> TfVariables { get; }
 
-        void AddTfVariable(IVariableModel variable);
+        void AddVariable(IVariableModel variable);
     }
 }

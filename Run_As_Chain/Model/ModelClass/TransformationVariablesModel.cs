@@ -8,17 +8,21 @@ using System.Threading.Tasks;
 
 namespace Run_As_Chain.Model.ModelClass
 {
-    class TransformationVariablesModel : ITransformationVariablesModel
+    public class TransformationVariablesModel : ITransformationVariablesModel
     {
-        private ObservableCollection<IVariableModel> _tfVariables;
+        private XmlEnum _elementName;
+        private ObservableCollection<IVariableModel> _tfVariables=new ObservableCollection<IVariableModel>();
 
         public ObservableCollection<IVariableModel> TfVariables
         {
             get { return _tfVariables; }
-          //  set { _tfVariables = value; }
         }
 
-        public void AddTfVariable(IVariableModel variable)
+        public TransformationVariablesModel(XmlEnum elementName)
+        {
+            _elementName = elementName;
+        }
+        public void AddVariable(IVariableModel variable)
         {
             TfVariables.Add(variable);
         }

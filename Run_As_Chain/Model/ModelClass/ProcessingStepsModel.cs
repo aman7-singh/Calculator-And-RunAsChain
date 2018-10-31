@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Run_As_Chain.Model.ModelClass
 {
-    class ProcessingStepsModel: IProcessingStepsModel
+    public class ProcessingStepsModel: IProcessingStepsModel
     {
         private ObservableCollection<IMapModel> _maps =new ObservableCollection<IMapModel>();
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Run_As_Chain.Model.ModelClass
 {
-    class VariableModel: IVariableModel
+    public class VariableModel: IVariableModel
     {
         private XmlEnum _elementName;
         private string _value;
@@ -32,8 +32,11 @@ namespace Run_As_Chain.Model.ModelClass
             get { return _initialValue; }
             // set { _initialValue = value; }
         }
-
-        public  VariableModel(XmlEnum elementName, string value, string isPublic, string initialValue)
+        public VariableModel(XmlEnum elementName)
+        {
+            _elementName = elementName;
+        }
+        public void  AddVariable(XmlEnum elementName, string value, string isPublic, string initialValue)
         {
             _elementName = elementName;
             _value = value;

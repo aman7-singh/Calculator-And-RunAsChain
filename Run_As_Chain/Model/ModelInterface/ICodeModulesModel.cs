@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Run_As_Chain.Model.ModelInterface
 {
-    interface ICodeModulesModel
+    public interface ICodeModulesModel
     {
         ObservableCollection<ICodeModulePathModel> CodeModules { get; }
     }

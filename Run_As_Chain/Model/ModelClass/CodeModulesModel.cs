@@ -10,14 +10,18 @@ namespace Run_As_Chain.Model.ModelClass
 {
     class CodeModulesModel: ICodeModulesModel
     {
-        private ObservableCollection<ICodeModulePathModel> _codemodules;
+        private XmlEnum _element;
+        private ObservableCollection<ICodeModulePathModel> _codemodules = new ObservableCollection<ICodeModulePathModel>();
 
         public ObservableCollection<ICodeModulePathModel> CodeModules
         {
             get { return _codemodules; }
             //set { _codemodules = value; }
         }
-
+        public CodeModulesModel(XmlEnum element)
+        {
+            _element = element;
+        }
         public void AddCodeModule(ICodeModulePathModel codeModule)
         {
             CodeModules.Add(codeModule);

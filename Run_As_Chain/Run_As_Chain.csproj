@@ -73,6 +73,8 @@
     <Compile Include="Model\ModelInterface\IVariableModel.cs" />
     <Compile Include="Model\ModelObjectBuilder.cs" />
     <Compile Include="Model\XmlEnum.cs" />
+    <Compile Include="ViewModel\Classes\ChainTransformation.cs" />
+    <Compile Include="ViewModel\Interfaces\IChainTransformation.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="View\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>

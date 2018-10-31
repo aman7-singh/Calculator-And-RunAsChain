@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Run_As_Chain.Model.ModelInterface
 {
-    interface ITransformationModel
+    public interface ITransformationModel
     {
         string CreatedOn { get; }
         string CreatedBy { get; }

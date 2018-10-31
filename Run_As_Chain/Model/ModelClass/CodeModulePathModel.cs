@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Run_As_Chain.Model.ModelClass
 {
-    class CodeModulePathModel: ICodeModulePathModel
+    public class CodeModulePathModel: ICodeModulePathModel
     {
         private XmlEnum _elementName;
         private string _codeModulePath;
@@ -16,8 +16,11 @@ namespace Run_As_Chain.Model.ModelClass
         {
             get { return _codeModulePath; }
         }
-
-        public CodeModulePathModel(XmlEnum elementName, string basPath)
+        public CodeModulePathModel(XmlEnum elementName)
+        {
+            _elementName = elementName;
+        }
+        public void AddCodeModulePathModel(XmlEnum elementName, string basPath)
         {
             _elementName = elementName;
             _codeModulePath = basPath;

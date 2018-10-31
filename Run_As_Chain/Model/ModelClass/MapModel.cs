@@ -51,22 +51,22 @@ namespace Run_As_Chain.Model.ModelClass
             private set { _targetFilePath = value; }
         }
 
-        private List<CodeModulePathModel> _codemodules;
+        private ICodeModulesModel _codemodules;
 
-        public List<CodeModulePathModel> CodeModules
+        public ICodeModulesModel CodeModules
         {
             get { return _codemodules; }
         }
 
-        private List<VariableModel> _tfVariables;
+        private ITransformationVariablesModel _tfVariables;
 
-        public List<VariableModel> TfVariables
+        public ITransformationVariablesModel TfVariables
         {
             get { return _tfVariables; }
         }
 
-        public MapModel(XmlEnum ElementName, string sequence, string name, string mapFilePath, string sourceFilePath, string targetFilePath,
-            List<CodeModulePathModel> bas, List<VariableModel> variable)
+        public void  AddMap(XmlEnum ElementName, string sequence, string name, string mapFilePath, string sourceFilePath, string targetFilePath,
+            ICodeModulesModel bas, ITransformationVariablesModel variable)
         {
             _sequence = sequence;
             _name = name;
@@ -81,13 +81,6 @@ namespace Run_As_Chain.Model.ModelClass
         {
             _elementName = elementName;
         }
-
-        public void AddBas(ICodeModulePathModel path)
-        {
-            CodeModulesModel baslist = new CodeModulesModel();
-            baslist.AddCodeModule(path);
-        }
-
 
     }
 }
