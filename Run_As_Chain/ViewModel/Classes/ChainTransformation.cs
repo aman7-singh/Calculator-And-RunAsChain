@@ -1,4 +1,5 @@
-﻿using Run_As_Chain.Model.ModelInterface;
+﻿using Run_As_Chain.Model;
+using Run_As_Chain.Model.ModelInterface;
 using Run_As_Chain.ViewModel.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,11 @@ namespace Run_As_Chain.ViewModel.Classes
         {
             get { return _chainObj; }
         }
+        ModelObjectBuilder ObjectBuilder = new ModelObjectBuilder();
 
+        public void loadChain(string path)
+        {
+            _chainObj = ObjectBuilder.XmlToObject(path);
+        }
     }
 }

@@ -5,12 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Run_As_Chain.View.Wizards"
              mc:Ignorable="d" 
+			 DataContext="{StaticResource MainViewModel}"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-		<DataGrid >
+		<DataGrid ItemsSource="{Binding Maps}" AutoGenerateColumns="False">
 			
 			<DataGrid.Columns>
-				<DataGridTextColumn Header="Map Sequence"/>
+				<DataGridTextColumn Header="Map Sequence" Binding="{Binding MapFilePath}"/>
 				<DataGridTextColumn Header="Button"/>
 			</DataGrid.Columns>
 		</DataGrid>

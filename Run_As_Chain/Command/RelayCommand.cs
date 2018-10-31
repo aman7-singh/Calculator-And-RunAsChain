@@ -9,26 +9,29 @@ namespace Run_As_Chain.Command
 {
     public class RelayCommand : ICommand
     {
-        Action Method;
-
-        public RelayCommand(Action method)
+        Action<object> _method;
+        Predicate<object> _predicate;
+        public RelayCommand(Action<object> method, Predicate<object> predicate)
         {
-            Method = method;
+            _method = method;
+            _predicate = predicate;
             Execute(method);
         }
+        public RelayCommand(Action<object> method) : this(method, null)
+        { }
 
         public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
         {
-            return true;
+            return _predicate == null ? true : _predicate(parameter);
         }
 
         public void Execute(object parameter)
         {
-            if (Method != null)
+            if (_method != null)
             {
-                Method.Invoke();
+                _method.Invoke(parameter);
             }
         }
     }
