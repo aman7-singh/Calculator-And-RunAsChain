@@ -18,7 +18,7 @@ using System.Windows.Input;
 
 namespace Calculator.ViewModel.MainViewModel.Standard
 {
-    public class StandardViewModel : INotifyPropertyChanged//, IOperationStatus
+    public class StandardViewModel : INotifyPropertyChanged, IStandardViewModel
     {
         StatusEventArgs args = new StatusEventArgs();
         private StringBuilder CheckDetail = new StringBuilder();
@@ -235,65 +235,65 @@ namespace Calculator.ViewModel.MainViewModel.Standard
         #endregion
 
         #region Algorith
-        private void Summing(object a)
+        public void Summing(object a)
         {
             Operation = Enum.OperatorEnum.Addition.ToString();
             FetchResultArgs resultArgs = new FetchResultArgs() { sign = "+" };
             FetchResult(this, resultArgs);
         }
-        private void Minusing(object a)
+        public void Minusing(object a)
         {
             Operation = Enum.OperatorEnum.subtraction.ToString();
             FetchResultArgs resultArgs = new FetchResultArgs() { sign = "-" };
             FetchResult(this, resultArgs);
         }
-        private void Multiplying(object a)
+        public void Multiplying(object a)
         {
             Operation = Enum.OperatorEnum.Multipllication.ToString();
             FetchResultArgs resultArgs = new FetchResultArgs() { sign = "*" };
             FetchResult(this, resultArgs);
         }
-        private void Dividing(object a)
+        public void Dividing(object a)
         {
             Operation = Enum.OperatorEnum.Division.ToString();
             FetchResultArgs resultArgs = new FetchResultArgs() { sign = "/" };
             FetchResult(this, resultArgs);
         }
-        private void EqualTo(object a)
+        public void EqualTo(object a)
         {
             Operation = Enum.OperatorEnum.Equal.ToString();
            FetchResultArgs resultArgs = new FetchResultArgs() { sign = "=" };
             FetchResult(this, resultArgs);
         }
-        private void CheckEquationFlow(object a)
+        public void CheckEquationFlow(object a)
         {
             Operation = CheckDetail?.ToString();
         }
-        private void ClearAllExpression(object a)
+        public void ClearAllExpression(object a)
         {
             CheckDetail.Clear();
             Expression = "0";
         }
-        private void PowerCalculation(object a)
+        public void PowerCalculation(object a)
         {
             Operation = Enum.OperatorEnum.Power.ToString();
             FetchResultArgs resultArgs = new FetchResultArgs() { sign = "^" };
             FetchResult(this, resultArgs);
         }
-        private void RemainderCalculation(object a)
+        public void RemainderCalculation(object a)
         {
             Operation = Enum.OperatorEnum.Remainder.ToString();
             FetchResultArgs resultArgs = new FetchResultArgs() { sign = "r" };
             FetchResult(this, resultArgs);
         }
-        private void SqrtCalculation(object a)
+        public void SqrtCalculation(object a)
         {
             Operation = Enum.OperatorEnum.SquareRoot.ToString(); 
             FetchResultArgs resultArgs = new FetchResultArgs() { sign = "\\" };
             FetchResult(this, resultArgs);
             Expression = "0";
         }
-        private void PercentageCalculation(object a)
+        public void PercentageCalculation(object a)
         {
             Operation = Enum.OperatorEnum.SquareRoot.ToString();
             FetchResultArgs resultArgs = new FetchResultArgs() { sign = "%" };

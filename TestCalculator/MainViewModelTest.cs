@@ -11,8 +11,8 @@ namespace TestCalculator
         //Singleton imlemented.
         // StandardViewModel Calculator = StandardViewModel.GetInstance();
 
-        StandardViewModel Calculator = new StandardViewModel();
-        public FetchResultDelegate FactchResult;
+        StandardViewModel CalculatorFetchResultDelegate = new StandardViewModel();
+        public  FactchResult;
         public MainViewModelTest()
         {
             FactchResult = new FetchResultDelegate(OnFatchResult);

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Run_As_Chain", "Run_As_Chai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Run_As_Chain_test", "Run_As_Chain_test\Run_As_Chain_test.csproj", "{0963F7A3-2B94-4DC4-87CF-4789FC291CA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.Test", "Calculator.Test\Calculator.Test.csproj", "{7D792641-90D2-4D2B-8650-456B9DAD1725}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0963F7A3-2B94-4DC4-87CF-4789FC291CA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0963F7A3-2B94-4DC4-87CF-4789FC291CA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0963F7A3-2B94-4DC4-87CF-4789FC291CA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D792641-90D2-4D2B-8650-456B9DAD1725}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D792641-90D2-4D2B-8650-456B9DAD1725}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D792641-90D2-4D2B-8650-456B9DAD1725}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D792641-90D2-4D2B-8650-456B9DAD1725}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
