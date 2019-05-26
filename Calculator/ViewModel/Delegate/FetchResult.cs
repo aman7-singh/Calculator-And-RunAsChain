@@ -6,5 +6,8 @@ using System.Threading.Tasks;
 
 namespace Calculator.ViewModel.Delegate
 {
-    public delegate void FetchResultDelegate(string sign);
+    public class FetchResultArgs : EventArgs
+    {
+        public string sign { get; set; }
+    }
 }
