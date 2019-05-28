@@ -72,6 +72,7 @@
     <Compile Include="ViewModel\Interfaces\IStandardViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel\Standard\StandardViewModel.cs" />
     <Compile Include="ViewModel\Algorithm\SubtractionViewModel.cs" />
+    <Compile Include="ViewModel\ObjectAsParameter\FetchResultEventArgs.cs" />
     <Compile Include="ViewModel\ObjectAsParameter\StatusEventArgs.cs" />
     <Compile Include="View\Standard.xaml.cs">
       <DependentUpon>Standard.xaml</DependentUpon>

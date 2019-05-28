@@ -96,7 +96,7 @@ namespace Calculator.ViewModel.MainViewModel.Standard
 
 
         public event PropertyChangedEventHandler PropertyChanged;
-        public event EventHandler<FetchResultArgs> FetchResult;
+        public event EventHandler<FetchResultEventArgs> FetchResult;
 
         //incase of action<T,T> return type should be void.
        // private void StandardViewModel_OperationChanged(object sender, StatusEventArgs e)
@@ -121,7 +121,7 @@ namespace Calculator.ViewModel.MainViewModel.Standard
         }
 
         #region Methode 
-        private void FactchResult(object sender, FetchResultArgs signpassed)
+        private void FactchResult(object sender, FetchResultEventArgs signpassed)
         {
             try
             {
@@ -238,31 +238,31 @@ namespace Calculator.ViewModel.MainViewModel.Standard
         public void Summing(object a)
         {
             Operation = Enum.OperatorEnum.Addition.ToString();
-            FetchResultArgs resultArgs = new FetchResultArgs() { sign = "+" };
+            FetchResultEventArgs resultArgs = new FetchResultEventArgs() { sign = "+" };
             FetchResult(this, resultArgs);
         }
         public void Minusing(object a)
         {
             Operation = Enum.OperatorEnum.subtraction.ToString();
-            FetchResultArgs resultArgs = new FetchResultArgs() { sign = "-" };
+            FetchResultEventArgs resultArgs = new FetchResultEventArgs() { sign = "-" };
             FetchResult(this, resultArgs);
         }
         public void Multiplying(object a)
         {
             Operation = Enum.OperatorEnum.Multipllication.ToString();
-            FetchResultArgs resultArgs = new FetchResultArgs() { sign = "*" };
+            FetchResultEventArgs resultArgs = new FetchResultEventArgs() { sign = "*" };
             FetchResult(this, resultArgs);
         }
         public void Dividing(object a)
         {
             Operation = Enum.OperatorEnum.Division.ToString();
-            FetchResultArgs resultArgs = new FetchResultArgs() { sign = "/" };
+            FetchResultEventArgs resultArgs = new FetchResultEventArgs() { sign = "/" };
             FetchResult(this, resultArgs);
         }
         public void EqualTo(object a)
         {
             Operation = Enum.OperatorEnum.Equal.ToString();
-           FetchResultArgs resultArgs = new FetchResultArgs() { sign = "=" };
+           FetchResultEventArgs resultArgs = new FetchResultEventArgs() { sign = "=" };
             FetchResult(this, resultArgs);
         }
         public void CheckEquationFlow(object a)
@@ -277,26 +277,26 @@ namespace Calculator.ViewModel.MainViewModel.Standard
         public void PowerCalculation(object a)
         {
             Operation = Enum.OperatorEnum.Power.ToString();
-            FetchResultArgs resultArgs = new FetchResultArgs() { sign = "^" };
+            FetchResultEventArgs resultArgs = new FetchResultEventArgs() { sign = "^" };
             FetchResult(this, resultArgs);
         }
         public void RemainderCalculation(object a)
         {
             Operation = Enum.OperatorEnum.Remainder.ToString();
-            FetchResultArgs resultArgs = new FetchResultArgs() { sign = "r" };
+            FetchResultEventArgs resultArgs = new FetchResultEventArgs() { sign = "r" };
             FetchResult(this, resultArgs);
         }
         public void SqrtCalculation(object a)
         {
             Operation = Enum.OperatorEnum.SquareRoot.ToString(); 
-            FetchResultArgs resultArgs = new FetchResultArgs() { sign = "\\" };
+            FetchResultEventArgs resultArgs = new FetchResultEventArgs() { sign = "\\" };
             FetchResult(this, resultArgs);
             Expression = "0";
         }
         public void PercentageCalculation(object a)
         {
             Operation = Enum.OperatorEnum.SquareRoot.ToString();
-            FetchResultArgs resultArgs = new FetchResultArgs() { sign = "%" };
+            FetchResultEventArgs resultArgs = new FetchResultEventArgs() { sign = "%" };
             FetchResult(this, resultArgs);
         }
 
